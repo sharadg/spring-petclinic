@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: spring-petclinic-ingress
+  labels:
+    app: spring-petclinic
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-contour-cluster-issuer
+    ingress.kubernetes.io/force-ssl-redirect: "true"
+    kubernetes.io/ingress.class: contour
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+    - secretName: spring-petclinic-tls
+      hosts:
+        - spring-petclinic.workload.home.pcfdot.com
+  rules:
+    - host: spring-petclinic.workload.home.pcfdot.com
+      http:
+        paths:
+          - backend:
+              serviceName: spring-petclinic-service
+              servicePort: 8080
