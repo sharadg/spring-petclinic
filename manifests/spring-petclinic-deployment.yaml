@@ -25,7 +25,7 @@ spec:
           - name: MYSQL_PASS
             value: petclinic
           - name: MYSQL_URL
-            value: jdbc:mysql://mysql.default.svc.cluster.local/petclinic
+            value: jdbc:mysql://mysql.default.svc.cluster.local/petclinic?serverTimezone=UTC&queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor
         ports:
         - containerPort: 8080
           
