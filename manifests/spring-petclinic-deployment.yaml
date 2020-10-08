@@ -28,4 +28,16 @@ spec:
             value: jdbc:mysql://mysql.default.svc.cluster.local/petclinic?serverTimezone=UTC&queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor
         ports:
         - containerPort: 8080
-          
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /actuator/health/liveness
+          initialDelaySeconds: 20
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            port: 8080
+            path: /actuator/health/readiness
+          initialDelaySeconds: 20
+          periodSeconds: 5
+
