@@ -13,9 +13,9 @@ spec:
   tls:
     - secretName: spring-petclinic-tls
       hosts:
-        - spring-petclinic.workload.home.pcfdot.com
+        - spring-petclinic.workload.pez.pcfdot.com
   rules:
-    - host: spring-petclinic.workload.home.pcfdot.com
+    - host: spring-petclinic.workload.pez.pcfdot.com
       http:
         paths:
           - backend:
