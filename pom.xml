@@ -30,8 +30,8 @@
     <jacoco.version>0.8.5</jacoco.version>
     <nohttp-checkstyle.version>0.0.4.RELEASE</nohttp-checkstyle.version>
     <spring-format.version>0.0.25</spring-format.version>
-    <spring-cloud.version>Hoxton.SR7</spring-cloud.version>
-    <wavefront.version>2.0.0</wavefront.version>
+    <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+    <wavefront.version>2.0.1</wavefront.version>
 
   </properties>
 
